@@ -118,7 +118,7 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // GET USER PROFILE WITH FAVORITES
+  // GET USER PROFILE WITH FAVORITE MOVIES
   public getUser(): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs
