@@ -1,0 +1,46 @@
+$backgroundColor: linear-gradient(to bottom, #7dc2ae, #fac2c1);
+
+.user-profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  background: $backgroundColor;
+  height: 100%;
+}
+
+.user-profile-card {
+  height: 25%;
+  width: 37%;
+  margin-top: 80px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  box-shadow: 10px 5px 5px #696969;
+  background-color: #e8e8e8;
+}
+
+.user-profile-card-header {
+  margin-bottom: 20px;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-title {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.user-profile-card-content {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.mat-card > .mat-card-actions:last-child {
+  margin-bottom: -8px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
