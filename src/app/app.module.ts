@@ -20,8 +20,16 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { FormsModule } from "@angular/forms";
 import { UserRegistrationFormComponent } from "./user-registration-form/user-registration-form.component";
 import { UserLoginFormComponent } from "./user-login-form/user-login-form.component";
+import { MovieCardComponent } from "./movie-card/movie-card.component";
+import { WelcomePageComponent } from "./welcome-page/welcome-page.component";
 import { RouterModule, Routes } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
+import { DirectorComponent } from "./director/director.component";
+import { EditProfileComponent } from "./edit-profile/edit-profile.component";
+import { GenreComponent } from "./genre/genre.component";
+import { NavbarComponent } from "./navbar/navbar.component";
+import { ProfileComponent } from "./profile/profile.component";
+import { SynopsisComponent } from "./synopsis/synopsis.component";
 
 // any features of Material Design that should be used in application will need to be included in app.module.ts file
 @NgModule({
