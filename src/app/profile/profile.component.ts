@@ -43,3 +43,22 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  // deletes user profile and redirects to welcome screen
+  deleteProfile(): void {
+    if (confirm("Are you sure you want to delete your account?")) {
+      this.router.navigate(["welcome"]).then(() => {
+        this.snackBar.open(
+          "You have successfully deleted your account!",
+          "OK",
+          {
+            duration: 2000,
+          }
+        );
+      });
+      this.fetchApiData.deleteUser().subscribe((result) => {
+        console.log(result);
+        localStorage.clear();
+      });
+    }
+  }
+}
