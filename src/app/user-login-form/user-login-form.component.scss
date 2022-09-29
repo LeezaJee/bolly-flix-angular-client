@@ -1,0 +1,22 @@
+.login-dialog {
+  box-shadow: none;
+}
+
+.login-dialog-header {
+  display: flex;
+  justify-content: center;
+}
+
+.login-dialog-title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+}
+
+.login-dialog-content {
+  margin-top: 25px;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column-reverse;
+}
