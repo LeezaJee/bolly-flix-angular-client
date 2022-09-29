@@ -84,7 +84,7 @@ into this class — its dependency injection again.
   }
 
   // DISPLAY SELECTED MOVIE
-  public getMovie(Title: any): Observable<any> {
+  public getSingleMovie(Title: any): Observable<any> {
     const token = localStorage.getItem("token");
 
     return this.http
