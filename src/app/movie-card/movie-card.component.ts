@@ -39,3 +39,28 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  // opens the genre dialog to display details
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(GenreComponent, {
+      data: {
+        Name: name,
+        Description: description,
+      },
+      // Assign dialog width
+      width: "500px",
+    });
+  }
+
+  // opens the director dialog to display details
+  openDirectorDialog(name: string, bio: string, birthday: Date): void {
+    this.dialog.open(DirectorComponent, {
+      data: {
+        Name: name,
+        Bio: bio,
+        Birthday: birthday,
+      },
+      // Assign dialog width
+      width: "500px",
+    });
+  }
+
