@@ -31,6 +31,15 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SynopsisComponent } from "./synopsis/synopsis.component";
 
+// defining routes
+const appRoutes: Routes = [
+  { path: "welcome", component: WelcomePageComponent },
+  { path: "movies", component: MovieCardComponent },
+  { path: "profile", component: ProfileComponent },
+  // in case something happens the app will always redirect to the welcome route
+  { path: "", redirectTo: "welcome", pathMatch: "prefix" },
+];
+
 // any features of Material Design that should be used in application will need to be included in app.module.ts file
 @NgModule({
   declarations: [AppComponent, UserRegistrationFormComponent, UserLoginFormComponent],
