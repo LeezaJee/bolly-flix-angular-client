@@ -64,3 +64,15 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  // opens the synopsis dialog to display movie details
+  openSynopsisDialog(title: string, description: string): void {
+    this.dialog.open(SynopsisComponent, {
+      data: {
+        Title: title,
+        Description: description,
+      },
+      // Assign dialog width
+      width: "500px",
+    });
+  }
+
