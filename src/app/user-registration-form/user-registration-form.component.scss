@@ -1,0 +1,22 @@
+.signup-dialog {
+  box-shadow: none;
+}
+
+.signup-dialog-header {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-dialog-title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+}
+
+.signup-dialog-content {
+  margin-top: 25px;
+}
+
+.signup-actions {
+  display: flex;
+  flex-direction: column-reverse;
+}
