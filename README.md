@@ -1,6 +1,18 @@
-# BollyFlixAngularClient
+# BollyFlix Angular Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Using Angular and TypeScript to create a beautiful UI and interact with the previously built REST API on the backend in the 'bolly-flix.movie-api'-repository.
+
+
+## Installation
+
+### Install dependencies for project with npm:
+
+```bash
+  git clone https://github.com/LeezaJee/bolly-flix-angular-client.git
+  cd bolly-flix-angular-client
+  npm install
+  
+```
 
 ## Development server
 
@@ -12,16 +24,27 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project to the corresponding GH pages. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A user can 
+- see all available movies
+- get details about the plot, director and genres
+- save and delete movies as favorites
+- update and delete the user profile
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Documentation
 
-## Further help
+### Dependencies
+**For Development**
+- Angular Material
+- Angular Router
+- Http Client Module
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Screenshots
+
+<img src="src/assets/bollyflix-client.png" height="400" width="800" >
+<img src="src/assets/bollyflix-client2.png" height="400" width="800" >
+
