@@ -1,6 +1,6 @@
 # BollyFlix Angular Client
 
-Using Angular and TypeScript to create a beautiful UI and interact with the previously built REST API on the backend in the 'bolly-flix.movie-api'-repository.
+This project was built using Angular and TypeScript to create a beautiful UI and interact with the REST API on the backend in the 'bolly-flix.movie-api'-repository.
 
 
 ## Installation
