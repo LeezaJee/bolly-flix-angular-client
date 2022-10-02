@@ -26,11 +26,17 @@ export class MovieCardComponent implements OnInit {
 
   // getMovies() is called in the ngOnInit() lifecycle hook
   // ngOnInit() is called when Angular is done creating the component (in React ComponentDidMount)
+  /**
+   * @service initializes the component loading the data
+   */
   ngOnInit(): void {
     this.getMovies();
   }
 
-  // gets movies from api call and sets the movies state to return JSON file
+  /**
+   * @service gets all movies from the API endpoint via FetchApiDataService and populates the local state variable
+   * @returns an array holding all movies objects
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -39,7 +45,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // opens the genre dialog to display details
+  /**
+   * @service opens a dialog to display details of the movie genre
+   * @returns the GenreComponent
+   * @param name
+   * @param description
+   */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -51,20 +62,31 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // opens the director dialog to display details
-  openDirectorDialog(name: string, bio: string, birthday: Date): void {
+  /**
+   * @service opens a dialog to display details of the director
+   * @returns the DirectorComponent
+   * @param name
+   * @param bio
+   * @param birth
+   */
+  openDirectorDialog(name: string, bio: string, birth: Date): void {
     this.dialog.open(DirectorComponent, {
       data: {
         Name: name,
         Bio: bio,
-        Birthday: birthday,
+        Birth: birth,
       },
       // Assign dialog width
       width: "500px",
     });
   }
 
-  // opens the synopsis dialog to display movie details
+  /**
+   * @servcice opens a dialog to display a movie synopsis
+   * @returns the SynopsisComponent
+   * @param title
+   * @param description
+   */
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
       data: {
@@ -76,7 +98,11 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // adds a movie to the list of favorite movies
+  /**
+   * @service adds a movie to the user's list of favorite movies via FetchApiDataService
+   * @returns updated favorite movie list
+   * @param MovieID
+   */
   addToFavoriteMovies(MovieID: string): void {
     console.log(MovieID);
     this.fetchApiData.addFavoriteMovie(MovieID).subscribe((result) => {
@@ -85,10 +111,14 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // removes a movie from the list of favorite movies
-  removeFromFavoriteMovies(id: string): void {
-    console.log(id);
-    this.fetchApiData.removeFavoriteMovie(id).subscribe((result) => {
+  /**
+   * @service removes a movie from the list of favorite movies via FetchApiDataService
+   * @returns updated favorite movie list
+   * @param MovieID
+   */
+  removeFromFavoriteMovies(MovieID: string): void {
+    console.log(MovieID);
+    this.fetchApiData.removeFavoriteMovie(MovieID).subscribe((result) => {
       console.log(result);
       this.ngOnInit();
     });

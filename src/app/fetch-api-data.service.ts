@@ -47,7 +47,11 @@ into this class — its dependency injection again.
   // HttpClient returns an observable (from the RxJS library you imported)
   // it allows you to process events asynchronously
 
-  // REGISTER USER
+  /**
+   * @service sends a POST request to the API endpoint to register a new user
+   * @returns a new user object
+   * @param userDetails
+   */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     // Using this.http, it posts it to the API endpoint and returns the API's response
@@ -63,14 +67,21 @@ into this class — its dependency injection again.
     );
   }
 
-  // LOG IN USER
+  /**
+   * @service sends a POST request to the API endpoint to login an existing user
+   * @param userDetails
+   * @returns the data of that user
+   */
   public userLogin(userDetails: any): Observable<any> {
     return this.http
       .post(apiUrl + "login", userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // DISPLAY ALL MOVIES
+  /**
+   * @service sends a GET request to the API endpoint to get data of all movies
+   * @returns an array containing all movies
+   */
   public getAllMovies(): Observable<any> {
     const token = localStorage.getItem("token");
 
@@ -83,7 +94,11 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // DISPLAY SELECTED MOVIE
+  /**
+   * @service sends a GET request to the API endpoint to get data on a single movie
+   * @returns a JSON object holding data of that specific movie
+   * @param Title
+   */
   public getSingleMovie(Title: any): Observable<any> {
     const token = localStorage.getItem("token");
 
@@ -96,7 +111,11 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // DISPLAY DIRECTOR INFORMATION
+  /**
+   * @service sends a GET request to the API endpoint to get data on a specific director
+   * @returns a JSON object holding director data
+   * @param Name
+   */
   public getDirector(Name: any): Observable<any> {
     return this.http
       .get(apiUrl + `director/${Name}`, {
@@ -107,7 +126,11 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // DISPLAY GENRE INFORMATION
+  /**
+   * @service sends a GET request to the API endpoint to get data on a genre
+   * @returns a JSON object holding genre data
+   * @param Name
+   */
   public getGenre(Name: any): Observable<any> {
     return this.http
       .get(apiUrl + `genre/${Name}`, {
@@ -118,7 +141,10 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // GET USER PROFILE WITH FAVORITE MOVIES
+  /**
+   * @service sends a GET request to the API endpoint to get data on a specific user
+   * @returns a JSON object holding data about the requested user
+   */
   public getUser(): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs
@@ -132,7 +158,11 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // UPDATE USER PROFILE
+  /**
+   * @service sends a PUT request to the API endpoint to allow users to update their details
+   * @returns a JSON object holding updated data about the user
+   * @param updateDetails
+   */
   public editUser(updateDetails: any): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs
@@ -144,7 +174,11 @@ into this class — its dependency injection again.
     });
   }
 
-  // ADD MOVIE TO FAVORITES
+  /**
+   * @service sends a PUT request to the API endpoint to add a movie to the user's list of favorite movies
+   * @returns a JSON object holding data about the user including the updated favorite movie list
+   * @param movieID
+   */
   public addFavoriteMovie(movieID: any): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs
@@ -162,7 +196,11 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // REMOVE MOVIE FROM FAVORITES
+  /**
+   * @service sends a DELETE request to the API endpoint to delete a movie from the user's list of favorite movies
+   * @returns a JSON object holding data about the user including the updated favorite movie list
+   * @param movieID
+   */
   public removeFavoriteMovie(movieID: any): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs
@@ -176,7 +214,10 @@ into this class — its dependency injection again.
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // DELETE USER PROFILE
+  /**
+   * @service sends a DELETE request to the API endpoint to delete an existing user
+   * @returns	a message indicating that the profile was successfully deleted
+   */
   deleteUser(): Observable<any> {
     const token = localStorage.getItem("token");
     // Get username from localStorage for URLs

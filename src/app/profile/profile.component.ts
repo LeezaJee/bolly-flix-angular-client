@@ -23,11 +23,18 @@ export class ProfileComponent implements OnInit {
     public snackBar: MatSnackBar
   ) {}
 
+  /**
+   * @service initializes the component loading the data
+   */
   ngOnInit(): void {
     this.getUser();
   }
 
-  // gets user data making API call
+  /**
+   * @service sends a GET request to the API to get details of a specific user
+   * @returns object holding information about the requested user
+   * @param resp
+   */
   getUser(): void {
     this.fetchApiData.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -36,14 +43,20 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  // opens the edit profile dialog from EditProfileComponent to allow users to edit their details
+  /**
+   * @service opens a dialog allowing users to update their details
+   * @returns the EditProfileComponent
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: "300px",
     });
   }
 
-  // deletes user profile and redirects to welcome screen
+  /**
+   * @service sends a DELETE request to the API to remove a user profile
+   * @returns the message "You have successfully deleted your account!"
+   */
   deleteProfile(): void {
     if (confirm("Are you sure you want to delete your account?")) {
       this.router.navigate(["welcome"]).then(() => {

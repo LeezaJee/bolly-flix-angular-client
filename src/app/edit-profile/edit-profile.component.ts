@@ -21,7 +21,10 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // allows user to edit their data
+  /**
+   * @service allows users to edit their data, such as username, password or email
+   * @remarks once username or password is updated, the user will be logged out and routed to the welcome page
+   */
   editUser(): void {
     console.log(this.userData);
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
@@ -30,7 +33,7 @@ export class EditProfileComponent implements OnInit {
       this.snackBar.open("Successfully updated profile!", "OK", {
         duration: 2000,
       });
-      // Log out user if they update Username or Password to avoid errors
+      // log out user if they update username or password to avoid errors
       if (this.userData.Username || this.userData.Password) {
         localStorage.clear();
         this.router.navigate(["welcome"]);

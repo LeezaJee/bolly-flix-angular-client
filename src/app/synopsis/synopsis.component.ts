@@ -7,6 +7,11 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
   styleUrls: ["./synopsis.component.scss"],
 })
 export class SynopsisComponent implements OnInit {
+  /**
+   * @service injects data from the MovieCard component using the MAT_DIALOG_DATA injection token
+   * @example {{ data.Description }} would render a summary of a selected movie
+   * @param data
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
